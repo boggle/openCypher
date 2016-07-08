@@ -83,7 +83,7 @@ Feature: EqualsAcceptance
     When executing query:
       """
       MATCH (b)
-      WHERE b = {param}
+      WHERE b = $param
       RETURN b
       """
     Then a TypeError should be raised at runtime: IncomparableValues
@@ -99,7 +99,7 @@ Feature: EqualsAcceptance
     When executing query:
       """
       MATCH (b)
-      WHERE {param} = b
+      WHERE $param = b
       RETURN b
       """
     Then a TypeError should be raised at runtime: IncomparableValues

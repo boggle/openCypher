@@ -61,7 +61,7 @@ For label/property and type/property combinations, the supported advice are:
 * `unique`
 ** This indicates that each possible property value is at most assigned to one entity in the entry's context. Additionally, the advice guarantees that no included scenario will ever violate this constraint by performing updates to the graph.
 * `index`
-** This indicates that some scenarios include queries that try to match on entities in the entry's context via a property comparison (e.g. `MATCH (n:Label {prop: {value}}) ...`).
+** This indicates that some scenarios include queries that try to match on entities in the entry's context via a property comparison (e.g. `MATCH (n:Label {prop: $value}) ...`).
 
 For label/sublabel combinations, the supported advice is:
 

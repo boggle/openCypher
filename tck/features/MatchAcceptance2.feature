@@ -785,7 +785,7 @@ Feature: MatchAcceptance2
       """
       MATCH (a)-->(b)
       WHERE (b)-->()
-        AND a.id = {id}
+        AND a.id = $id
       RETURN b
       """
     Then the result should be:
@@ -884,8 +884,8 @@ Feature: MatchAcceptance2
     When executing query:
       """
       MATCH (advertiser)-[:ADV_HAS_PRODUCT]->(out)-[:AP_HAS_VALUE]->(red)<-[:AA_HAS_VALUE]-(a)
-      WHERE advertiser.id = {1}
-        AND a.id = {2}
+      WHERE advertiser.id = $`1`
+        AND a.id = $`2`
         AND red.name = 'red'
         AND out.name = 'product1'
       RETURN out.name

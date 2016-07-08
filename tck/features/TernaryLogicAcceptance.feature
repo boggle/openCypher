@@ -76,7 +76,7 @@ Feature: TernaryLogicAcceptanceTest
       | rhs | <rhs> |
     When executing query:
       """
-      RETURN {lhs} AND {rhs} AS result
+      RETURN $lhs AND $rhs AS result
       """
     Then the result should be:
       | result   |
@@ -97,7 +97,7 @@ Feature: TernaryLogicAcceptanceTest
       | rhs | <rhs> |
     When executing query:
       """
-      RETURN {lhs} OR {rhs} AS result
+      RETURN $lhs OR $rhs AS result
       """
     Then the result should be:
       | result   |
@@ -119,7 +119,7 @@ Feature: TernaryLogicAcceptanceTest
       | result | <result> |
     When executing query:
       """
-      RETURN {lhs} XOR {rhs} AS result
+      RETURN $lhs XOR $rhs AS result
       """
     Then the result should be:
       | result   |
@@ -141,7 +141,7 @@ Feature: TernaryLogicAcceptanceTest
       | result | <result> |
     When executing query:
       """
-      RETURN {elt} IN {coll} AS result
+      RETURN $elt IN $coll AS result
       """
     Then the result should be:
       | result   |
